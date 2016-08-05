@@ -9,3 +9,5 @@ http_app.get('/', function(req, res){
 http_app.listen(port, function () {
     console.log('http is UP!');
 });
+
+module.exports = http_app;
