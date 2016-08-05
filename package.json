@@ -16,9 +16,11 @@
     "url": "https://github.com/alejodaraio/nightbot/issues"
   },
   "homepage": "https://github.com/alejodaraio/nightbot#readme",
-
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha-circleci-reporter": "0.0.1"
+  },
+  "dependencies": {
+    "express": "^4.14.0"
   }
 }
