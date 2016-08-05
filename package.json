@@ -1,0 +1,19 @@
+{
+  "name": "nightbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alejodaraio/nightbot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alejodaraio/nightbot/issues"
+  },
+  "homepage": "https://github.com/alejodaraio/nightbot#readme"
+}
