@@ -25,22 +25,14 @@ http_app.get('/', function (req, res) {
 
 http_app.get('/currentsong', function (req, res) {
 
-    var token = req.query.code;
-    var options = {
-        url: NIGHTBOT_REQUEST_QUEUE,
-        headers: {
-            'Authorization': 'Bearer ' + token
-        }
-    };
 
-    request.get(options, function (error, response, body) {
-        res.send(body);
-    });
 });
 
 http_app.get('/autorize', function (req, res) {
-    nightBot_oauth2token(req.query.code, function (result) {
-       res.send(result);
+    nightBot_oauth2token(req.query.code, function (token) {
+        nightBot_currentSong(token,function (currentSong) {
+            res.send(currentSong);
+        });
     });
 });
 
@@ -66,7 +58,21 @@ function nightBot_oauth2token(code, callback) {
             }
         },
         function (err, httpResponse, body) {
-            callback(body);
+            callback(body.access_token);
         }
     );
+}
+
+function nightBot_currentSong(token, callback) {
+    var options = {
+        url: NIGHTBOT_REQUEST_QUEUE,
+        method: 'GET',
+        headers: {
+            'Authorization': 'Bearer ' + token
+        }
+    };
+
+    request.get(options, function (error, response, body) {
+        callback(body);
+    });
 }
