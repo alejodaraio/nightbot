@@ -15,7 +15,6 @@ http_app.set('port', (process.env.PORT || 5000));
 http_app.set('views', __dirname + '/views');
 http_app.set('view engine', 'ejs');
 
-
 //configure the routes
 http_app.get('/', function (req, res) {
     res.render('pages/index', {
