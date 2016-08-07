@@ -50,7 +50,7 @@ function nightBot_oauth2token(code, callback) {
                 client_id: NIGHTBOT_CLIENT_ID,
                 client_secret: NIGHTBOT_CLIENT_SECRET,
                 grant_type: 'authorization_code',
-                redirect_uri: 'https://nightbot.herokuapp.com/currentsong',
+                redirect_uri: 'https://nightbot.herokuapp.com/oauth2token',
                 code: code
             }
         },
