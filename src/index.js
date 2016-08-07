@@ -8,7 +8,7 @@ const NIGHTBOT_CLIENT_SECRET = '3830fbadc4bf402a20ed5e1442a65f74';
 const NIGHTBOT_REDIRECT_AUTORIZE = 'https://nightbot.herokuapp.com/autorize';
 const NIGHTBOT_REDIRECT_CURRENT_SONG = 'https://nightbot.herokuapp.com/currentsong';
 const NIGHTBOT_OAUTH2_TOKEN = 'https://api.nightbot.tv/oauth2/token';
-const NIGHTBOT_REQUEST_QUEUE = 'https://api.nightbot.tv/1/song_requests/queue';
+const NIGHTBOT_REQUEST_QUEUE = 'https://api.nightbot.tv/1/song_requests/queue?scope=commands,timers';
 
 //init settings
 http_app.set('port', (process.env.PORT || 5000));
