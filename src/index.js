@@ -64,6 +64,8 @@ function nightBot_oauth2token(code, callback) {
 }
 
 function nightBot_currentSong(token, callback) {
+    callback(token);
+    return;
     var options = {
         url: NIGHTBOT_REQUEST_QUEUE,
         method: 'GET',
