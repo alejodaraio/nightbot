@@ -24,10 +24,7 @@ http_app.get('/', function (req, res) {
 
 http_app.get('/currentsong', function (req, res) {
     nightBot_currentSong(req.query.token, function (currentsong) {
-        res.render('pages/currentsong', {
-                current_song: currentsong
-            }
-        );
+        res.send(currentsong);
     });
 });
 
