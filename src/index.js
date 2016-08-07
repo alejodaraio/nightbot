@@ -43,14 +43,14 @@ function nightBot_autorize_url(client_id) {
 }
 
 function nightBot_oauth2token(code, callback) {
-
+    alert(code);
     request.post(NIGHTBOT_OAUTH2_TOKEN,
         {
             form: {
                 client_id: NIGHTBOT_CLIENT_ID,
                 client_secret: NIGHTBOT_CLIENT_SECRET,
                 grant_type: 'authorization_code',
-                redirect_uri: 'https://nightbot.herokuapp.com/oauth2token',
+                redirect_uri: NIGHTBOT_REDIRECT,
                 code: code
             }
         },
