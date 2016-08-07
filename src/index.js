@@ -27,7 +27,10 @@ http_app.get('/currentsong', function (req, res) {
 });
 
 http_app.get('/oauth2token', function (req, res) {
-    nightBot_oauth2token(req.query.code);
+    nightBot_oauth2token(req.query.code, function (result) {
+        console.log(result);
+       res.send(result);
+    });
 });
 
 http_app.listen(http_app.get('port'), function () {
@@ -39,7 +42,7 @@ function nightBot_autorize_url(client_id) {
     return NIGHTBOT_API + '/oauth2/authorize?response_type=code&client_id=' + client_id + '&redirect_uri=' + NIGHTBOT_REDIRECT;
 }
 
-function nightBot_oauth2token(code) {
+function nightBot_oauth2token(code, callback) {
 
     request.post(NIGHTBOT_OAUTH2_TOKEN,
         {
@@ -52,7 +55,7 @@ function nightBot_oauth2token(code) {
             }
         },
         function (err, httpResponse, body) {
-            console.log(body);
+            callback(body);
         }
     );
 }
