@@ -5,7 +5,7 @@ var request = require('request');
 const NIGHTBOT_API = 'https://beta.nightbot.tv';
 const NIGHTBOT_CLIENT_ID = '15ba6d3a60e6e5cd684311ea1d86904d';
 const NIGHTBOT_CLIENT_SECRET = '3830fbadc4bf402a20ed5e1442a65f74';
-const NIGHTBOT_REDIRECT = 'https://nightbot.herokuapp.com/currentsong';
+const NIGHTBOT_REDIRECT = 'https://nightbot.herokuapp.com/oauth2token';
 const NIGHTBOT_OAUTH2_TOKEN = 'https://api.nightbot.tv/oauth2/token';
 const NIGHTBOT_REQUEST_QUEUE = 'https://api.nightbot.tv/1/song_requests/queue';
 
