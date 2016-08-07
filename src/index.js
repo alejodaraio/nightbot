@@ -43,7 +43,8 @@ function nightBot_autorize_url(client_id) {
 }
 
 function nightBot_oauth2token(code, callback) {
-    alert(code);
+    callback(code);
+    return;
     request.post(NIGHTBOT_OAUTH2_TOKEN,
         {
             form: {
