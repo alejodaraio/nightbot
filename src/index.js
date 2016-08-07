@@ -58,7 +58,8 @@ function nightBot_oauth2token(code, callback) {
             }
         },
         function (err, httpResponse, body) {
-            callback(body);
+            body =  JSON.parse(body);
+            callback(body.access_token);
         }
     );
 }
