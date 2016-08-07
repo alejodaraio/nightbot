@@ -24,12 +24,12 @@ http_app.get('/', function (req, res) {
 });
 
 http_app.get('/currentsong', function (req, res) {
-
-
+    res.send('hello');
 });
 
 http_app.get('/autorize', function (req, res) {
     nightBot_oauth2token(req.query.code, function (token) {
+        res.send(token);
         nightBot_currentSong(token,function (currentSong) {
             res.send(currentSong);
         });
@@ -64,8 +64,7 @@ function nightBot_oauth2token(code, callback) {
 }
 
 function nightBot_currentSong(token, callback) {
-    callback(token);
-    return;
+
     var options = {
         url: NIGHTBOT_REQUEST_QUEUE,
         method: 'GET',
