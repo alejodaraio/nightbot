@@ -25,7 +25,10 @@ http_app.get('/', function (req, res) {
 
 http_app.get('/currentsong', function (req, res) {
     nightBot_currentSong(req.query.token, function (currentsong) {
-        res.send(currentsong);
+        res.render('pages/currentsong', {
+                current_song: currentsong
+            }
+        );
     });
 });
 
@@ -57,7 +60,7 @@ function nightBot_oauth2token(code, callback) {
             }
         },
         function (err, httpResponse, body) {
-            body =  JSON.parse(body);
+            body = JSON.parse(body);
             callback(body.access_token);
         }
     );
