@@ -29,7 +29,7 @@ http_app.get('/currentsong', function (req, res) {
     var options = {
         url: NIGHTBOT_REQUEST_QUEUE,
         headers: {
-            'Authorization': token
+            'Authorization': 'Bearer ' + token
         }
     };
 
@@ -69,8 +69,4 @@ function nightBot_oauth2token(code, callback) {
             callback(body);
         }
     );
-}
-
-function nightBot_requestSong(token) {
-    var url = '';
 }
