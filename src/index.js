@@ -76,6 +76,10 @@ function nightBot_currentSong(token, callback) {
 
     request.get(options, function (error, response, body) {
         body = JSON.parse(body);
-        callback(body._currentSong.track.title);
+        var song = null;
+        if(body._currentSong !== null) {
+            song = body._currentSong.track.title;
+        }
+        callback(song);
     });
 }
