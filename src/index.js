@@ -41,7 +41,7 @@ http_app.listen(http_app.get('port'), function () {
 
 //helpers
 function nightBot_autorize_url(client_id) {
-    return NIGHTBOT_API + '/oauth2/authorize?response_type=code&client_id=' + client_id + '&redirect_uri=' + NIGHTBOT_REDIRECT_AUTORIZE;
+    return NIGHTBOT_API + '/oauth2/authorize?scope=song_requests_queue&response_type=code&client_id=' + client_id + '&redirect_uri=' + NIGHTBOT_REDIRECT_AUTORIZE;
 }
 
 function nightBot_oauth2token(code, callback) {
@@ -53,7 +53,6 @@ function nightBot_oauth2token(code, callback) {
                 client_secret: NIGHTBOT_CLIENT_SECRET,
                 grant_type: 'authorization_code',
                 redirect_uri: NIGHTBOT_REDIRECT_CURRENT_SONG,
-                scope: 'song_requests_queue',
                 code: code
             }
         },
