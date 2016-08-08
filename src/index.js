@@ -32,7 +32,10 @@ http_app.get('/currentsong', function (req, res) {
 
 http_app.get('/autorize', function (req, res) {
     nightBot_oauth2token(req.query.code, function (token) {
-        res.send(token);
+        res.writeHead(301,
+            {Location: NIGHTBOT_REDIRECT_CURRENT_SONG + '?token=' + token}
+        );
+        res.end();
     });
 });
 
