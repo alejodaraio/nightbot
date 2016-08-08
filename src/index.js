@@ -2,13 +2,13 @@ var express = require('express');
 var http_app = express();
 var request = require('request');
 
-const NIGHTBOT_API = 'https://beta.nightbot.tv';
-const NIGHTBOT_CLIENT_ID = '15ba6d3a60e6e5cd684311ea1d86904d';
-const NIGHTBOT_CLIENT_SECRET = '3830fbadc4bf402a20ed5e1442a65f74';
-const NIGHTBOT_REDIRECT_AUTORIZE = 'https://nightbot.herokuapp.com/autorize';
-const NIGHTBOT_REDIRECT_CURRENT_SONG = 'https://nightbot.herokuapp.com/currentsong';
-const NIGHTBOT_OAUTH2_TOKEN = 'https://api.nightbot.tv/oauth2/token';
-const NIGHTBOT_REQUEST_QUEUE = 'https://api.nightbot.tv/1/song_requests/queue';
+const NIGHTBOT_API = (process.env.NIGHTBOT_HOST || 'https://beta.nightbot.tv');
+const NIGHTBOT_CLIENT_ID = (process.env.NIGHTBOT_CLIENT_ID || null);
+const NIGHTBOT_CLIENT_SECRET = (process.env.NIGHTBOT_CLIENT_SECRET || null);
+const NIGHTBOT_REDIRECT_AUTORIZE =(process.env.NIGHTBOT_REDIRECT_AUTORIZE || 'https://nightbot.herokuapp.com/autorize');
+const NIGHTBOT_REDIRECT_CURRENT_SONG = (process.env.NIGHTBOT_CURRENT_SONG || 'https://nightbot.herokuapp.com/currentsong');
+const NIGHTBOT_OAUTH2_TOKEN = (process.env.NIGHTBOT_OAUTH2_TOKEN || 'https://api.nightbot.tv/oauth2/token');
+const NIGHTBOT_REQUEST_QUEUE = (process.env.NIGHTBOT_REQUEST_QUEUE || 'https://api.nightbot.tv/1/song_requests/queue');
 
 //init settings
 http_app.set('port', (process.env.PORT || 5000));
