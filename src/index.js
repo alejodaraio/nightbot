@@ -5,7 +5,7 @@ var request = require('request');
 const NIGHTBOT_API = (process.env.NIGHTBOT_HOST || 'https://beta.nightbot.tv');
 const NIGHTBOT_CLIENT_ID = (process.env.NIGHTBOT_CLIENT_ID || null);
 const NIGHTBOT_CLIENT_SECRET = (process.env.NIGHTBOT_CLIENT_SECRET || null);
-const NIGHTBOT_REDIRECT_AUTORIZE =(process.env.NIGHTBOT_REDIRECT_AUTORIZE || 'https://nightbot.herokuapp.com/autorize');
+const NIGHTBOT_REDIRECT_AUTORIZE = (process.env.NIGHTBOT_REDIRECT_AUTORIZE || 'https://nightbot.herokuapp.com/autorize');
 const NIGHTBOT_REDIRECT_CURRENT_SONG = (process.env.NIGHTBOT_CURRENT_SONG || 'https://nightbot.herokuapp.com/currentsong');
 const NIGHTBOT_OAUTH2_TOKEN = (process.env.NIGHTBOT_OAUTH2_TOKEN || 'https://api.nightbot.tv/oauth2/token');
 const NIGHTBOT_REQUEST_QUEUE = (process.env.NIGHTBOT_REQUEST_QUEUE || 'https://api.nightbot.tv/1/song_requests/queue');
@@ -80,7 +80,7 @@ function nightBot_currentSong(token, callback) {
     request.get(options, function (error, response, body) {
         body = JSON.parse(body);
         var song = null;
-        if(body._currentSong !== null) {
+        if (body._currentSong !== null) {
             song = body._currentSong.track.title;
         }
         callback(song);

@@ -11,6 +11,7 @@ With this service you can show in your Stream the current song playing in Nightb
     The Second URI is for show the current song.
     
 > https://nightbot.mydomain.com/autorize
+
 > https://nightbot.mydomain.com/currentsong 
 
 #### App
